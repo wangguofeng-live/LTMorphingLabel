@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LTMorphingLabel"
-  s.version      = "0.9.3"
+  s.version      = "0.9.3.1"
   s.summary      = "Graceful morphing effects for UILabel written in Swift."
   s.description  = <<-DESC
                    A morphing UILabel subclass written in Swift.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
   s.swift_versions = ['5.3']
   s.source       = {
-                    :git => "https://github.com/lexrus/LTMorphingLabel.git",
+                    :git => "https://github.com/wangguofeng-live/LTMorphingLabel.git",
                     :tag => s.version
                    }
   s.source_files = "LTMorphingLabel/*.{h,swift}", "LTMorphingLabel/**/*.{swift}"
