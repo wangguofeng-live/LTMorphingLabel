@@ -81,6 +81,7 @@ typealias LTMorphingSkipFramesClosure =
     @IBInspectable open var morphingDuration: Float = 0.6
     @IBInspectable open var morphingCharacterDelay: Float = 0.026
     @IBInspectable open var morphingEnabled: Bool = true
+    @IBInspectable open var morphingDiffEnabled: Bool = true
 
     @IBOutlet open weak var delegate: LTMorphingLabelDelegate?
     open var morphingEffect: LTMorphingEffect = .scale
@@ -131,7 +132,12 @@ typealias LTMorphingSkipFramesClosure =
             guard text != newValue else { return }
 
             previousText = text ?? ""
-            diffResults = previousText.diffWith(newValue)
+            if (morphingDiffEnabled) {
+                diffResults = previousText.diffWith(newValue)
+            }else {
+                diffResults = previousText.diffIgnoreWith(newValue)
+            }
+            
             super.text = newValue ?? ""
             
             morphingProgress = 0.0
